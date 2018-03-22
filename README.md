@@ -8,4 +8,8 @@ A komponensek egy-egy menüponthoz kapcsolódnak.
 ## Start
 * Klónozd le a projektet: 
 ```git clone https://github.com/cherryApp/yellowWeb1.git```
-* 
+* Lépj be a mappájába: 
+```cd ./yellowWeb1```
+* Töltsd le a függőségeket: 
+```npm i```
+* Kezdheted a munkát.
