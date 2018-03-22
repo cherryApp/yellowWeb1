@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">YellowWeb</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown" [class.show]="showDropdown" (click)="toggleDropdown()">
+        <a (click)="disableClick($event)" class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Oldalak
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" [class.show]="showDropdown">
+          <a class="dropdown-item" routerLink="/soccer1">Péti</a>
+          <a class="dropdown-item" routerLink="/weather01">Tomi</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
