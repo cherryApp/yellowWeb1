@@ -11,9 +11,9 @@
           Oldalak
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" [class.show]="showDropdown">
-          <a class="dropdown-item" routerLink="/soccer1">Péti</a>
-          <a class="dropdown-item" routerLink="/weather01">Tomi</a>
-          <div class="dropdown-divider"></div>
+          <a routerLink="{{ menuPoint.url }}" *ngFor="let menuPoint of menuList" class="dropdown-item">
+            {{ menuPoint.label }}
+          </a>
         </div>
       </li>
     </ul>
