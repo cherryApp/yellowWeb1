@@ -19,7 +19,22 @@ export class Weather04Component implements OnInit {
     this.http.get(this.jsonUrl1).subscribe((data: serverData) => {
       console.log(data);
       this.dataBud.push(data);
-      console.log(this.dataBud[0].name)
+    });
+    this.http.get(this.jsonUrl2).subscribe((data: serverData) => {
+     
+      this.dataBud.push(data);
+    });
+    this.http.get(this.jsonUrl3).subscribe((data: serverData) => {
+     
+      this.dataBud.push(data);
+    });
+    this.http.get(this.jsonUrl4).subscribe((data: serverData) => {
+     
+      this.dataBud.push(data);
+    });
+    this.http.get(this.jsonUrl5).subscribe((data: serverData) => {
+     
+      this.dataBud.push(data);
     });
 
   }

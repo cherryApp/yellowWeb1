@@ -14,36 +14,36 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr *ngFor="let data of dataBud">
       <td>
-          {{dataBud[0].sys.country}}
+          {{data.sys.country}}
       </td>
       <td>
-          {{dataBud[0].name}}
+          {{data.name}}
       </td>
       <td>
-          {{dataBud[0].weather[0].main}}
+          {{data.weather[0].main}}
       </td>
       <td>
-          {{dataBud[0].wind.speed + " km/h"}}
+          {{data.wind.speed + " km/h"}}
       </td>
       <td>
-          {{dataBud[0].main.temp - 273.15 + " °C"}}
+          {{(data.main.temp - 273.15).toFixed(1) + " °C"}}
       </td>
       <td>
-          {{dataBud[0].main.temp_min - 273.15 + " °C"}}
+          {{data.main.temp_min - 273.15 + " °C"}}
       </td>
       <td>
-          {{dataBud[0].main.temp_max - 273.15 + " °C"}}
+          {{data.main.temp_max - 273.15 + " °C"}}
       </td>
       <td>
-          {{dataBud[0].main.humidity + "%"}}
+          {{data.main.humidity + "%"}}
       </td>
       <td>
-          {{dataBud[0].main.pressure}}
+          {{data.main.pressure}}
       </td>
     </tr>
-    
+
   </tbody>
 </table>
 </div>
