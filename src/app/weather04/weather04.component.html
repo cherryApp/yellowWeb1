@@ -1,3 +1,49 @@
-<p>
-  weather04 works!
-</p>
+<div class="container">
+<table class="table table-striped table-bordered">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">City</th>
+      <th scope="col">Current weather</th>
+      <th scope="col">Wind speed</th>
+      <th scope="col">Temperature</th>
+      <th scope="col">Min temp</th>
+      <th scope="col">Max temp</th>
+      <th scope="col">Humidity</th>
+      <th scope="col">Pressure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+          {{dataBud[0].sys.country}}
+      </td>
+      <td>
+          {{dataBud[0].name}}
+      </td>
+      <td>
+          {{dataBud[0].weather[0].main}}
+      </td>
+      <td>
+          {{dataBud[0].wind.speed + " km/h"}}
+      </td>
+      <td>
+          {{dataBud[0].main.temp - 273.15 + " °C"}}
+      </td>
+      <td>
+          {{dataBud[0].main.temp_min - 273.15 + " °C"}}
+      </td>
+      <td>
+          {{dataBud[0].main.temp_max - 273.15 + " °C"}}
+      </td>
+      <td>
+          {{dataBud[0].main.humidity + "%"}}
+      </td>
+      <td>
+          {{dataBud[0].main.pressure}}
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+</div>
