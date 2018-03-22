@@ -1,3 +1,33 @@
-<p>
-  weather02 works!
-</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Values</th>
+      <th scope="col">{{citiesOnWindow[0].name}}</th>
+      <th scope="col">{{citiesOnWindow[1].name}}</th>
+      <th scope="col">{{citiesOnWindow[2].name}}</th>
+      <th scope="col">{{citiesOnWindow[3].name}}</th>
+      <th scope="col">{{citiesOnWindow[4].name}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Temperature</td>
+      <td>{{citiesOnWindow[0].main.temp}}</td>
+      <td>{{citiesOnWindow[1].main.temp}}</td>
+      <td>{{citiesOnWindow[2].main.temp}}</td>
+      <td>{{citiesOnWindow[3].main.temp}}</td>
+      <td>{{citiesOnWindow[4].main.temp}}</td>
+    </tr>
+    <tr>
+      <td>Weather Description</td>
+      <td>{{citiesOnWindow[0].weather[0].description}}</td>
+      <td>{{citiesOnWindow[1].weather[0].description}}</td>
+      <td>{{citiesOnWindow[2].weather[0].description}}</td>
+      <td>{{citiesOnWindow[3].weather[0].description}}</td>
+      <td>{{citiesOnWindow[4].weather[0].description}}</td>
+    </tr>
+  </tbody>
+</table>
+<!-- <ul>
+  <li *ngFor="let hero of heroes" (click)="kiir(hero)">{{hero.name}}</li>
+</ul> -->
