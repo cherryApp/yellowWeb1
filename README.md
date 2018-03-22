@@ -13,3 +13,15 @@ A komponensek egy-egy menüponthoz kapcsolódnak.
 * Töltsd le a függőségeket: 
 ```npm i```
 * Kezdheted a munkát.
+
+## Témák
+### Élelmiszerek:  
+* ```https://world.openfoodfacts.org/api/v0/product/[barcode].json```  
+* ```https://hu.openfoodfacts.org/```  
+
+### Football klubok és meccsek
+* ```https://github.com/opendatajson/football.json/tree/master/2016-17```  
+
+### Időjárás
+* ```http://api.openweathermap.org/data/2.5/weather?q=Budapest,hu&appid={apikey}```  
+* Regisztráció: ```https://home.openweathermap.org/users/sign_up``` 
