@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FocikingaComponent } from '../focikinga.component';
+import { Matchday } from '../data';
 
 @Component({
   selector: 'app-selected-match',
@@ -7,10 +8,10 @@ import { FocikingaComponent } from '../focikinga.component';
   styleUrls: ['./selected-match.component.css']
 })
 export class SelectedMatchComponent implements OnInit {
-  @Input() rounds: FocikingaComponent;
-  @Input() matchday: FocikingaComponent;
+  @Input() day: Matchday;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
