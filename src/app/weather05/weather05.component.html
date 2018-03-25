@@ -1,3 +1,35 @@
-<p>
-  weather05 works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-md-4">
+      <h1>{{city}}</h1>
+    </div>
+
+    <div class="col-xs-4 col-md-2">
+      <i class="wi wi-night-sleet"></i>
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      <table class="table-bordered">
+        <thead>
+          <tr>
+            <th>Temperature</th>
+            <th>Pressure</th>
+            <th>Humidity</th>
+            <th>Weather</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{temp}} &#8451;</td>
+            <td>{{pressure}} hpa</td>
+            <td>{{humidity}} %</td>
+            <td>{{weather[0]}}</td>
+            <td>{{weather[1]}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
