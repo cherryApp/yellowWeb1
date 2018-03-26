@@ -46,7 +46,8 @@ export class Weather05Component implements OnInit {
       this.weather = [];
       this.weather.push(data.weather[0].main);
       this.weather.push(data.weather[0].description);
-      console.log(this.weather);
+      this.citySearch = '';
+      this.countrySearch = '';
 
       this.http.get(this.iconJsonUrl).subscribe((data: iconData) => {
         this.iconArray = Object.keys(data).map(i => data[i]);
