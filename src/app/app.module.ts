@@ -27,6 +27,7 @@ import { Weather07Component } from './weather07/weather07.component';
 import { FocibalazsComponent } from './focibalazs/focibalazs.component';
 
 import { SearchComponent } from './weather03/search/search.component';
+import { KelvinToCelsiusPipe } from './kelvin-to-celsius.pipe';
 /*
 import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
 
@@ -80,6 +81,7 @@ const routes: Routes = [
         Weather05Component,
         Weather06Component,
         Weather07Component,
+        KelvinToCelsiusPipe,
         FocibalazsComponent/*,
         Weather02SearchComponent,
         SelectedMatchComponent*/

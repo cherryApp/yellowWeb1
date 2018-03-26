@@ -53,7 +53,6 @@ export class Soccer1Component implements OnInit {
       }
     });
   }
-
 }
 
 interface serverData {
