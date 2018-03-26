@@ -33,7 +33,7 @@ export class Weather05Component implements OnInit {
 
     this.http.get(this.jsonUrl).subscribe((data: serverData) => {
       this.city = data.name;
-      this.temp = parseFloat(data.main.temp) - 273.15;
+      this.temp = data.main.temp - 273.15;
       this.temp = parseFloat(this.temp.toFixed(2))
       this.pressure = data.main.pressure;
       this.humidity = data.main.humidity;
@@ -148,10 +148,14 @@ export class Weather05Component implements OnInit {
 interface serverData {
   name: string;
   coord: object;
-  main: object;
 
+  main: {
+    pressure: number;
+    temp: number;
+    humidity: number;
+  };
+  weather: Array<any>;
 }
-
 
 
 interface iconData {
