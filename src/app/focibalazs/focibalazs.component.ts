@@ -29,6 +29,7 @@ export class FocibalazsComponent implements OnInit {
       this.multiplier *= -1;
     }
     this.clubs.sort((a, b) => {
+      this.lastKey = key;
       return a[key].localeCompare(b[key]) * this.multiplier;
     });
   }
