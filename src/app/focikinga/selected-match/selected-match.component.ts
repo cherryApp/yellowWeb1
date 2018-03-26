@@ -9,7 +9,7 @@ import { Matchday, JsonData, Match } from '../data';
 })
 
 export class SelectedMatchComponent implements OnInit {
-  @Input() day: Matchday;
+  @Input() matchday: Matchday;
   @Input() k: number;
   @Input() rounds: JsonData;
   constructor() {

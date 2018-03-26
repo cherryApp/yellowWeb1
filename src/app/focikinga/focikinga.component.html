@@ -10,19 +10,46 @@
           </tr>
         </thead>
         <tbody>
-          <select class="custom-select" size="10">
+          <select class="custom-select" size="21">
             <option value="Test" selected>Choose a Matchday!</option>
-            <option value="{{day.name}}" *ngFor="let day of rounds; index as k" (click)="showMatchday(day, k)">{{day.name}}</option>
+            <option value="{{matchday.name}}" *ngFor="let matchday of rounds; index as k" [class.selected]="matchday === selectedMatchday"
+              (click)="showMatchday(matchday, k)">{{matchday.name}}</option>
           </select>
         </tbody>
       </table>
     </div>
     <div class="col-12 col-md-8">
+      <p>Trying child component:</p>
+      <app-selected-match></app-selected-match>
 
-      <!-- <app-selected-match *ngIf="showMatchday(day,k)" [day]="day" >
+      <!--<app-selected-match [matchday]="selectedMatchday"> </app-selected-match>-->
+      <div *ngIf="selectedMatchday">
+        <p>within focikinga component:</p>
+        <table class="table table-sm table-hover">
+          <thead>
+            <tr>
+              <th (click)="sortTable2('date')">Date</th>
+              <th (click)="sortTable2('team1')">Team 1.</th>
+              <th (click)="sortTable2('team2')">Team 2.</th>
+              <th scope="col">Score 1.</th>
+              <th scope="col">Score 2.</th>
+            </tr>
+          </thead>
+          <tbody>
 
-      </app-selected-match> -->
+            <tr *ngFor="let matches of selectedMatchday.matches; index as i ">
+              <td>{{selectedMatchday.matches[i].date}}</td>
+              <td>{{selectedMatchday.matches[i].team1.name}}</td>
+              <td>{{selectedMatchday.matches[i].team2.name}}</td>
+              <td>{{selectedMatchday.matches[i].score1}}</td>
+              <td>{{selectedMatchday.matches[i].score2}}</td>
+            </tr>
 
+
+          </tbody>
+        </table>
+
+      </div>
     </div>
   </div>
 </div>

@@ -30,9 +30,9 @@ import { SearchComponent } from './weather03/search/search.component';
 import { KelvinToCelsiusPipe } from './kelvin-to-celsius.pipe';
 /*
 import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
-
-import { SelectedMatchComponent } from './focikinga/selected-match/selected-match.component';
 */
+import { SelectedMatchComponent } from './focikinga/selected-match/selected-match.component';
+
 import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
 
 
@@ -83,8 +83,8 @@ const routes: Routes = [
         Weather07Component,
         KelvinToCelsiusPipe,
         FocibalazsComponent,
-        Weather02SearchComponent,/*,
-        SelectedMatchComponent*/
+        Weather02SearchComponent,
+        SelectedMatchComponent
     ],
     imports: [
         BrowserModule,

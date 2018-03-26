@@ -12,7 +12,7 @@ import { isNullOrUndefined } from 'util';
 })
 export class FocikingaComponent implements OnInit {
   rounds: Array<Matchday>;
-  matchday: Matchday;
+  selectedMatchday: Matchday;
   jsonUrl: string = "https://raw.githubusercontent.com/opendatajson/football.json/master/2016-17/en.1.json";
   lastKey: string = '';
   multiplier: number = 1;
@@ -23,10 +23,8 @@ export class FocikingaComponent implements OnInit {
 
   constructor(private http: HttpClient, private http2: HttpClient) {
     this.http.get(this.jsonUrl).subscribe((data: JsonData) => {
-      // console.log(data);
+      console.log(data);
       this.rounds = data.rounds;
-      this.matchday = this.rounds[0];
-      console.log(this.rounds[0]);
     });
 
     this.http2.get(this.jsonUrl2).subscribe((data2: serverData) => {
@@ -39,9 +37,9 @@ export class FocikingaComponent implements OnInit {
   ngOnInit() {
   }
 
-  showMatchday(day: any, k: number) {
-    this.rounds[k] = day;
-    console.log(this.rounds[k]);
+  showMatchday(matchday: Matchday, k: number): void {
+    this.selectedMatchday = matchday;
+    console.log(matchday);
   }
 
 
@@ -54,6 +52,23 @@ export class FocikingaComponent implements OnInit {
     if (confirm('Really?')) {
       this.clubs2.splice(i, 1);
     }
+  }
+
+  sortTable2(key: string) {
+
+    if (this.lastKey == key) {
+      this.multiplier *= -1;
+    }
+    if (key == 'team1' || key == 'team2') {
+      this.selectedMatchday.matches.sort((a, b) => {
+        return a[key].name.localeCompare(b[key].name) * this.multiplier;
+      });
+    } else {
+      this.selectedMatchday.matches.sort((a, b) => {
+        return a[key].localeCompare(b[key]) * this.multiplier;
+      });
+    }
+    this.lastKey = key;
   }
 
   sortTable(key: string) {
