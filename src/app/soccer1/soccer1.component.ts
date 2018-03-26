@@ -13,6 +13,7 @@ export class Soccer1Component implements OnInit {
   jsonUrl: string = "https://world.openfoodfacts.org/api/v0/product/5999038508006.json";
   lastKey: string = '';
   multiplier: number = 1;
+  selectedRound: any;
 
   constructor(private http: HttpClient) {
     this.http.get(this.jsonUrl).subscribe((data: serverData) => {
@@ -20,12 +21,8 @@ export class Soccer1Component implements OnInit {
       console.log(data);
     });
   }
-<<<<<<< HEAD
+
   ngOnInit() {}
-=======
-  ngOnInit() { }
-<<<<<<< HEAD
-=======
 
   onSelect(round): void {
     this.selectedRound = round;
@@ -54,8 +51,6 @@ export class Soccer1Component implements OnInit {
       }
     });
   }
->>>>>>> 07e2bf236e232256c646f083775bda4822ddf5ac
->>>>>>> a891b0168e7709e736896e084652202733840a55
 }
 
 interface serverData {
