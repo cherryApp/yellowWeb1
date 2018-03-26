@@ -38,7 +38,10 @@ export class FocirekaComponent implements OnInit {
     if (this.lastKey == key) {
       this.multiplier *= -1;
     }
+
     this.clubs.sort((a, b) => {
+      a[key] = a[key] || "";
+      b[key] = b[key] || "";
       return a[key].localeCompare(b[key]) * this.multiplier;
     });
   }
