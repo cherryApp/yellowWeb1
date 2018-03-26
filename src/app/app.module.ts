@@ -27,13 +27,13 @@ import { Weather07Component } from './weather07/weather07.component';
 import { FocibalazsComponent } from './focibalazs/focibalazs.component';
 
 import { SearchComponent } from './weather03/search/search.component';
-
+/*
 import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
 
 import { SelectedMatchComponent } from './focikinga/selected-match/selected-match.component';
 
 import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
-
+*/
 
 const routes: Routes = [
     { path: '', component: Soccer1Component, pathMatch: 'full' },
@@ -53,8 +53,8 @@ const routes: Routes = [
     { component: Weather05Component, path: 'weather05' },
     { component: Weather06Component, path: 'weather06' },
     { component: Weather07Component, path: 'weather07' },
-    { component: FocibalazsComponent, path: 'focibalazs' }
-  { component: SearchComponent, path: 'weather03/search' }
+    { component: FocibalazsComponent, path: 'focibalazs' },
+    { component: SearchComponent, path: 'weather03/search' }
 ];
 
 
@@ -80,9 +80,9 @@ const routes: Routes = [
         Weather05Component,
         Weather06Component,
         Weather07Component,
-        FocibalazsComponent,
+        FocibalazsComponent/*,
         Weather02SearchComponent,
-        SelectedMatchComponent
+        SelectedMatchComponent*/
     ],
     imports: [
         BrowserModule,
