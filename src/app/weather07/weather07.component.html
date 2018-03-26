@@ -1,3 +1,65 @@
-<p>
-  weather07 works!
-</p>
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1">
+
+      <table class="table table-striped table-hover text-center">
+        <thead>
+          <tr>
+            <th>Város</th>
+            <th>Hőmérséklet(K)</th>
+            <th>Légnyomás(hPa)</th>
+            <th>Páratartalom(%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Budapest</td>
+            <td>{{mainBudapest.temp}}</td>
+            <td>{{mainBudapest.pressure}} </td>
+            <td>{{mainBudapest.humidity}}</td>
+          </tr>
+          <tr>
+            <td>Madrid</td>
+            <td>{{mainMadrid.temp}}</td>
+            <td>{{mainMadrid.pressure}} </td>
+            <td>{{mainMadrid.humidity}}</td>
+          </tr>
+          <tr>
+            <td>Washington</td>
+            <td>{{mainWashington.temp}}</td>
+            <td>{{mainWashington.pressure}} </td>
+            <td>{{mainWashington.humidity}}</td>
+          </tr>
+          <tr>
+            <td>Peking</td>
+            <td>{{mainPeking.temp}}</td>
+            <td>{{mainPeking.pressure}} </td>
+            <td>{{mainPeking.humidity}}</td>
+          </tr>
+          <tr>
+            <td>London</td>
+            <td>{{mainLondon.temp}}</td>
+            <td>{{mainLondon.pressure}} </td>
+            <td>{{mainLondon.humidity}}</td>
+          </tr>
+          <tr>
+            <td>Paris</td>
+            <td>{{mainParis.temp}}</td>
+            <td>{{mainParis.pressure}} </td>
+            <td>{{mainParis.humidity}}</td>
+          </tr>
+          <tr>
+            <td>Berlin</td>
+            <td>{{mainBerlin.temp}}</td>
+            <td>{{mainBerlin.pressure}} </td>
+            <td>{{mainBerlin.humidity}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</div>
