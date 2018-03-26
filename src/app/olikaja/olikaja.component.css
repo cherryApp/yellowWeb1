@@ -1,0 +1,31 @@
+table {
+  background: #27c7d1;
+}
+
+thead {
+  background: #e74c3c;
+  text-align: center;
+}
+
+.row {
+  background: #d3e3e6;
+  padding: 15px;
+}
+
+div div {
+  margin-top: 20px;
+}
+
+span {
+  font-size: 20px;
+  padding: 5px 15px;
+  background: #fff;
+  border-radius: 20px;
+}
+
+span:hover {
+  color: white;
+  cursor: pointer;
+  background: #ccc;
+  border-radius: 20px;
+}
