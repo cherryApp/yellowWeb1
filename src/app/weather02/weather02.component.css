@@ -1,0 +1,82 @@
+#modal {
+  display: none;
+  width: 44%;
+  margin: 0 auto;
+  border: 1px solid lightgrey;
+}
+
+#icon {
+  padding-right: 40px;
+}
+
+#clouds {
+  background-image: url("cloud.png");
+  background-repeat: no-repeat;
+  background-size: 200px 100px;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  animation: breath 2s linear infinite;
+  top: 20px;
+  position: relative;
+}
+
+@keyframes breath {
+  0% {
+    background-size: 200px 100px;
+    left: 0px;
+  }
+  50% {
+    background-size: 205px 105px;
+    left: 5px;
+  }
+  100% {
+    background-size: 200px 100px;
+    left: 0px;
+  }
+}
+
+#sun {
+  background-image: url("sun.png");
+  background-repeat: no-repeat;
+  background-size: 100px 50px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: -80px;
+  left: 40px;
+  animation: sayHi 20s linear infinite;
+}
+
+@keyframes sayHi {
+  0% {
+    top: -80px;
+  }
+  25% {
+    top: -120px;
+    left: 60px;
+  }
+  50% {
+    top: -140px;
+    left: 80px;
+  }
+  75% {
+    top: -120px;
+    left: 100px;
+  }
+  100% {
+    top: -80px;
+    left: 100px;
+  }
+}
+
+#searchBtn {
+  border: 1px solid grey;
+  background: transparent;
+  border-radius: 10%;
+}
+
+#searchBtn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px black;
+}

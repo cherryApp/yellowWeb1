@@ -32,9 +32,9 @@ import { KelvinToCelsiusPipe } from './kelvin-to-celsius.pipe';
 import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
 
 import { SelectedMatchComponent } from './focikinga/selected-match/selected-match.component';
-
-import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
 */
+import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
+
 
 const routes: Routes = [
     { path: '', component: Soccer1Component, pathMatch: 'full' },
@@ -82,8 +82,8 @@ const routes: Routes = [
         Weather06Component,
         Weather07Component,
         KelvinToCelsiusPipe,
-        FocibalazsComponent/*,
-        Weather02SearchComponent,
+        FocibalazsComponent,
+        Weather02SearchComponent,/*,
         SelectedMatchComponent*/
     ],
     imports: [

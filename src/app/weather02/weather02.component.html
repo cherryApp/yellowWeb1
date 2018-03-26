@@ -1,3 +1,92 @@
-<p>
-  weather02 works!
-</p>
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-6">
+      <h1>Weather App</h1>
+      <p>Real-time weather report and a search function where you can find any city in the World!</p>
+    </div>
+    <div class="col-6">
+      <div id="clouds"></div>
+      <div id="sun"></div>
+    </div>
+  </div>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col" *ngFor="let cities of citiesOnWindow">{{cities.name}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Temperature</td>
+      <td *ngFor="let temperature of citiesOnWindow">{{temperature.main.temp}} °C</td>
+    </tr>
+    <tr>
+      <td>MIN / MAX Temperature</td>
+      <td *ngFor="let temperature of citiesOnWindow">{{temperature.main.temp_min}} °C / {{temperature.main.temp_max}} °C</td>
+    </tr>
+    <tr>
+      <td>Weather Description</td>
+      <td *ngFor="let weather of citiesOnWindow">{{weather.weather[0].description}}</td>
+    </tr>
+    <tr>
+      <td>Wind Speed</td>
+      <td *ngFor="let speed of citiesOnWindow">{{speed.wind.speed}} m/s</td>
+    </tr>
+    <tr>
+      <td>Sunrise</td>
+      <td *ngFor="let rise of citiesOnWindow">{{rise.sys.sunrise}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<form>
+  <div class="form-group text-center">
+    <input id="searchCity" type="text" placeholder="City name">
+    <input id="searchCountry" type="text" placeholder="Country -two letter format-">
+    <input id="searchBtn" type="button" value="Search" (click)="search()">
+  </div>
+</form>
+
+
+<div id="modal">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col" *ngFor="let cities2 of cityModal">{{cities2.name}}</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Temperature</td>
+        <td *ngFor="let temperature2 of cityModal">{{temperature2.main.temp}} °C</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>MIN / MAX Temperature</td>
+        <td *ngFor="let temperature2 of cityModal">{{temperature2.main.temp_min}} °C / {{temperature2.main.temp_max}} °C</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Weather Description</td>
+        <td *ngFor="let weather2 of cityModal">{{weather2.weather[0].description}}</td>
+        <td id="icon"></td>
+      </tr>
+      <tr>
+        <td>Wind Speed</td>
+        <td *ngFor="let speed2 of cityModal">{{speed2.wind.speed}} m/s</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+<app-weather02-search>
+
+</app-weather02-search>
