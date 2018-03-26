@@ -1,0 +1,12 @@
+button.btn.rounds.btn-primary {
+  margin: 2px;
+}
+
+.myHead {
+  background-color: cornflowerblue;
+}
+
+select.custom-select>option:hover {
+  background-color: cornflowerblue;
+  cursor: pointer;
+}
