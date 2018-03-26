@@ -1,21 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FocirekaComponent } from './focireka.component';
+import { FocikingaComponent } from './focikinga.component';
 
-describe('FocirekaComponent', () => {
-  let component: FocirekaComponent;
-  let fixture: ComponentFixture<FocirekaComponent>;
+describe('FocikingaComponent', () => {
+  let component: FocikingaComponent;
+  let fixture: ComponentFixture<FocikingaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [FocirekaComponent]
+      declarations: [ FocikingaComponent ]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
-
   beforeEach(() => {
-    fixture = TestBed.createComponent(FocirekaComponent);
+    fixture = TestBed.createComponent(FocikingaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
