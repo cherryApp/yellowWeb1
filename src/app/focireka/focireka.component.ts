@@ -48,5 +48,3 @@ interface serverData {
   name: string;
   clubs: Array<any>;
 }
-
-
