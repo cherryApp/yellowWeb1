@@ -1,3 +1,36 @@
-<p>
-  soccer02 works!
-</p>
+<div class="container">
+  <h1>Miro Foci</h1>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th class="text-center">ID</th>
+        <th class="text-center" (click)="sortTable('name')">NAME</th>
+        <th class="text-center" (click)="sortTable('key')">KEY</th>
+        <th class="text-center" (click)="sortTable('code')">CODE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let club of clubs; index as i">
+        <td>
+          <input type="text" class="form-control text-center" value="{{i+1}}">
+        </td>
+        <td>
+          <input type="text" class="form-control" value="{{club.name}}">
+        </td>
+        <td>
+          <input type="text" class="form-control" value="{{club.key}}">
+        </td>
+        <td>
+          <input type="text" class="form-control text-center" value="{{club.code}}">
+        </td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-success" (click)="modifyRow(i)">Modify</button>
+            <button type="button" class="btn btn-danger" (click)="deleteRow(i)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

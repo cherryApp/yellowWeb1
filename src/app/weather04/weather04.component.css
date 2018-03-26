@@ -1,0 +1,19 @@
+div.input-group {
+    margin-bottom: 15px;
+}
+
+span {
+    font-weight: bold;
+}
+table {
+    box-shadow: 0 5px 20px grey;
+}
+th[scope], #tBody td {
+    vertical-align: middle
+}
+td:first-child{
+    font-weight: bold
+}
+th[scope] {
+    cursor: pointer;
+}
