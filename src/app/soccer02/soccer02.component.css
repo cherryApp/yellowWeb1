@@ -1,0 +1,17 @@
+td input {
+  background-color: rgba(102, 102, 102, 0.856);
+  color: rgb(0, 255, 0);
+}
+
+th {
+  color: rgb(0, 255, 0);
+  cursor: pointer;
+}
+
+table {
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  -webkit-box-shadow: 14px 1px 67px -8px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 14px 1px 67px -8px rgba(0, 0, 0, 0.8);
+  box-shadow: 14px 1px 67px -8px rgba(0, 0, 0, 0.8);
+}
