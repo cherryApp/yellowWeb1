@@ -14,3 +14,6 @@ th[scope], #tBody td {
 td:first-child{
     font-weight: bold
 }
+th[scope] {
+    cursor: pointer;
+}

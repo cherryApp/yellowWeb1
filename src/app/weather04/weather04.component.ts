@@ -38,6 +38,10 @@ export class Weather04Component implements OnInit {
   ngOnInit() {
   }
 
+  sortingReverse() {
+    return this.dataDisplay.reverse();
+  }
+
 
 }
 interface serverData {
