@@ -1,3 +1,79 @@
-<p>
-  fociandi works!
-</p>
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>2016-17 La Liga</title>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h2>La Liga 2016/2017</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="">ID</th>
+                <th class="" (click)="sortTable('key')">Key</th>
+                <th class="" (click)="sortTable('name')">Name</th>
+                <th class="" (click)="sortTable('code')">Code</th>
+                <th class="">Update</th>
+                <th class="">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let club of clubs index as i">
+                <td>{{i+1}}</td>
+                <td>
+                  <input type="text" class="form-control" [(ngModel)]="club.key">
+                </td>
+                <td>
+                  <input type="text" class="form-control" [(ngModel)]="club.name">
+                </td>
+                <td>
+                  <input type="text" class="form-control" [(ngModel)]="club.code">
+                </td>
+                <td>
+                  <div class="btn-group btn-group-toggle">
+                    <button type="button" class="btn btn-primary" (click)="updateRow(club)">Update</button>
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-danger" (click)="deleteRow(i)">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <pre>{{clubs | json}}</pre>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer></footer>
+
+</body>
+
+</html>
