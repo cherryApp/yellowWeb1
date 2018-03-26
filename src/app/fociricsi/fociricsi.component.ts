@@ -34,9 +34,10 @@ export class FociricsiComponent implements OnInit {
     }
   }
   sortingThis(key: string) {
-    if (key == this.lastKey) {
+    if (this.lastKey == key) {
       this.multiplier *= -1;
     }
+    this.lastKey = key;
     this.clubs.sort((a, b) => {
       return a[key].localeCompare(b[key]) * this.multiplier;
     });
