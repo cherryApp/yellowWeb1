@@ -20,7 +20,46 @@ export class Soccer1Component implements OnInit {
       console.log(data);
     });
   }
+<<<<<<< HEAD
   ngOnInit() {}
+=======
+<<<<<<< HEAD
+  ngOnInit() {}
+=======
+  ngOnInit() { }
+<<<<<<< HEAD
+=======
+
+  onSelect(round): void {
+    this.selectedRound = round;
+    console.log(this.selectedRound);
+  }
+
+  deleteRow(i) {
+    if (confirm("Tényleg töröljük?")) {
+      this.selectedRound.matches.splice(i, 1)
+    }
+  }
+
+  updateScore(i) {
+    this.selectedRound.matches[i].score2 = parseInt(this.selectedRound.matches[i].score2);
+  }
+
+  //buggy
+  sortTable(key: string) {
+    let bugzy = 0;
+    this.selectedRound.matches.sort((a: string, b: string) => {
+      if (a[key] && b[key]) {
+        console.log(bugzy++);
+        return b[key].localeCompare(a[key])
+      } else {
+        return 0;
+      }
+    });
+  }
+>>>>>>> 07e2bf236e232256c646f083775bda4822ddf5ac
+>>>>>>> a891b0168e7709e736896e084652202733840a55
+>>>>>>> d55b8c5b35324499db64f6fde78be9f917a1c474
 }
 
 interface serverData {
