@@ -28,9 +28,21 @@ export class Weather05Component implements OnInit {
 
   constructor(private http: HttpClient) {
 
-    this.jsonUrl = this.onSearch(this.citySearch, this.countrySearch, this.http);
-    console.log(this.jsonUrl);
+    this.jsonUrl = `http://api.openweathermap.org/data/2.5/weather?q=${this.citySearch},${this.countrySearch}&appid=7b589666541dced92f6bb1ae15152055`;
+    console.log(32, this.jsonUrl);
+    this.getData();
 
+
+
+
+
+
+  }
+
+  ngOnInit() {
+  }
+
+  getData() {
     this.http.get(this.jsonUrl).subscribe((data: serverData) => {
       this.city = data.name;
       this.temp = data.main.temp - 273.15;
@@ -106,13 +118,6 @@ export class Weather05Component implements OnInit {
 
 
     });
-
-
-
-
-  }
-
-  ngOnInit() {
   }
 
 
@@ -127,13 +132,10 @@ export class Weather05Component implements OnInit {
 
   }
 
-  onSearch(citySearch, countrySearch, http) {
-    this.citySearch = this.citySearch.toLowerCase();
-    this.citySearch = this.citySearch.charAt(0).toUpperCase() + this.citySearch.slice(1);
-    this.countrySearch = this.countrySearch.substring(0, 2).toLowerCase();
-    console.log(this.citySearch, this.countrySearch);
-    console.log(`http://api.openweathermap.org/data/2.5/weather?q=${this.citySearch},${this.countrySearch}&appid=7b589666541dced92f6bb1ae15152055`);
-    return `http://api.openweathermap.org/data/2.5/weather?q=${this.citySearch},${this.countrySearch}&appid=7b589666541dced92f6bb1ae15152055`;
+  onSearch() {
+    this.jsonUrl = `http://api.openweathermap.org/data/2.5/weather?q=${this.citySearch},${this.countrySearch}&appid=7b589666541dced92f6bb1ae15152055`;
+    console.log(32, this.jsonUrl);
+    this.getData();
   }
 
   sziliClick() {
