@@ -22,7 +22,7 @@
     </div>
 
     <div class="col-xs-4 col-md-2 text-center">
-      <img class="img-responsive" src={{icon}}>
+      <img class="img-responsive" [src]="icon">
     </div>
 
     <div class="col-xs-12 col-md-6 text-center">
@@ -49,5 +49,9 @@
     </div>
   </div>
 
+  <div>
 
+    <img [style.visibility]="sziliShow ? 'visible' : 'hidden' " id="szili" src="assets/weatherIcons/nemeth-szilard.png" alt="">
+    <button class="btn float-right" (click)="sziliClick()">Professional Help</button>
+  </div>
 </div>
