@@ -22,7 +22,9 @@ export class Soccer1Component implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+
 
   onSelect(round): void {
     this.selectedRound = round;

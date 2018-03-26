@@ -1,3 +1,17 @@
-<p>
-  weather03 works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Időjárás a világban</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12" *ngFor="let city of cities">{{city.name}}
+      <br>{{city.weather[0].description}}
+      <br>{{city.main.temp}}°C
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <app-search></app-search>
+  </div>
+</div>
