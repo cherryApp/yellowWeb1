@@ -12,7 +12,7 @@ import { NgModel } from '@angular/forms';
 
 
 export class Weather05Component implements OnInit {
-  sziliShow: boolean = true;
+  sziliShow: boolean = false;
   weather: Array<any> = [];
   city: String = "";
   temp: Number = 0;
@@ -34,7 +34,7 @@ export class Weather05Component implements OnInit {
     this.http.get(this.jsonUrl).subscribe((data: serverData) => {
       this.city = data.name;
       this.temp = parseFloat(data.main.temp) - 273.15;
-      this.temp = this.temp.toFixed(2)
+      this.temp = parseFloat(this.temp.toFixed(2))
       this.pressure = data.main.pressure;
       this.humidity = data.main.humidity;
       this.weather.push(data.weather[0].main);
@@ -122,7 +122,6 @@ export class Weather05Component implements OnInit {
     for (let i in array) {
       if (array[i].label == desc) {
         return array[i].icon
-        break;
       }
     }
 
