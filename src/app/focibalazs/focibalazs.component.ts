@@ -46,7 +46,7 @@ export class FocibalazsComponent implements OnInit {
   }
 
   deleteRow(i) {
-    if (confirm('Really?')) {
+    if (confirm('Are you sure?')) {
       this.clubs.splice(i, 1);
     }
   }
