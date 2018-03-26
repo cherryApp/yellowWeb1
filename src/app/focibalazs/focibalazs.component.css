@@ -1,8 +1,8 @@
 table {
   background: linear-gradient(to right, green, white, red);
   color: white;
-  border-radius: 10px;
-  box-shadow: 10px 10px 8px #888888;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px grey;
 }
 
 th {
