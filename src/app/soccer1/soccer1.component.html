@@ -1,1 +1,54 @@
-<h2>Az adatok kezelése</h2>
+<!--{{rounds[0].name}} {{rounds[0].matches[0].date}} {{rounds[0].matches[0].team1.code}}-->
+
+<div class="container">
+  <div class="row">
+    <h2>{{nameOfTheGame}}</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <br>
+
+      <button type="button" class="btn btn-sm btn-outline-success btn-for-rounds" *ngFor="let round of rounds; index as i" (click)="onSelect(round)">
+        Round {{i+1}}
+      </button>
+    </div>
+    <div class="col-md-8 table-of-details">
+      <br>
+      <div *ngIf="selectedRound">
+        <table class="table table-sm">
+          <thead>
+            <th (click)="sortTable('date')">Date</th>
+            <th (click)="sortTable('team1')">Team1</th>
+            <th (click)="sortTable('team2')">Team2</th>
+            <th>Score1</th>
+            <th></th>
+            <th>Score2</th>
+            <th class="text-center">Modify</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let match of selectedRound.matches; index as i">
+              <td>{{match.date}}</td>
+              <td>{{match.team1.name}}</td>
+              <td>{{match.team2.name}}</td>
+              <td class="text-center">{{match.score1}}</td>
+              <td>-</td>
+
+              <td>
+                <input type="text" style="width: 60px" class="text-center" [(ngModel)]="match.score2">
+              </td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-sm btn-outline-warning" (click)="updateScore(i)">CHEAT</button>
+                  <button class="btn btn-sm btn-outline-danger" (click)="deleteRow(i)">DEL</button>
+                </div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+
+
+  </div>
