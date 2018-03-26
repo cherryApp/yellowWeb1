@@ -21,9 +21,6 @@ export class Soccer1Component implements OnInit {
       console.log(data);
     });
   }
-<<<<<<< HEAD
-  ngOnInit() { }
-=======
 
   ngOnInit() { }
 
@@ -56,8 +53,6 @@ export class Soccer1Component implements OnInit {
       }
     });
   }
-
->>>>>>> 1ea42ba576a8d4586b70fba21d800ef40995b6a8
 }
 
 interface serverData {

@@ -1,3 +1,60 @@
-<p>
-  weather06 works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form>
+        <div class="form-row">
+          <div class="col-8">
+            <input class="form-control" name="city" type="text" placeholder="Search city" [(ngModel)]="city">
+          </div>
+          <div class="col-2">
+            <input class="form-control" name="country" type="text" placeholder="country" [(ngModel)]="country">
+          </div>
+          <div class="col-2">
+            <button class="btn btn-info mb-2" type="button" (click)="addLocation(city, country)">Add</button>
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th (click)="sortTable('name')">Location</th>
+                <th (click)="sortTable('sys', 'country')">Country</th>
+                <th (click)="sortTable(weather[0].main)">Weather</th>
+                <th (click)="sortTable(weather[0].description)">Description</th>
+                <th (click)="sortTable(main.temp)">Temperature</th>
+                <th (click)="sortTable(main.pressure)">Pressure</th>
+                <th (click)="sortTable(main.humidity)">Humidity</th>
+                <th (click)="sortTable(clouds.all)">Clouds</th>
+                <th (click)="sortTable(wind.speed)">Wind</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let location of locations; index as i">
+                <td>{{locations[i].name}}</td>
+                <td>{{locations[i].sys.country}}</td>
+                <td>{{locations[i].weather[0].main}}</td>
+                <td>{{locations[i].weather[0].description}}</td>
+                <td>{{locations[i].main.temp | kelvinToCelsius}}</td>
+                <td>{{locations[i].main.pressure}}hpa</td>
+                <td>{{locations[i].main.humidity}}%</td>
+                <td>{{locations[i].clouds.all}}%</td>
+                <td>{{locations[i].wind.speed}}m/s</td>
+                <td>
+                  <button type="button" class="btn btn-secondary" (click)="removeLocation(i)">Remove</button>
+                </td>
+                <td>
+                  <a class="btn btn-success" href="https://www.latlong.net/c/?lat={{locations[i].coord.lat}}&long={{locations[i].coord.lon}}"
+                    target="_blank">Go to {{locations[i].name}}</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
