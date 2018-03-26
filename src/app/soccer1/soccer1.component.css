@@ -1,3 +1,8 @@
-th:hover{
+th:hover {
   cursor: pointer;
+}
+
+.btn-for-rounds {
+  margin: 3px;
+  width: 80px;
 }
