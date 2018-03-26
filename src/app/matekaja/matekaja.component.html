@@ -1,3 +1,21 @@
-<p>
-  matekaja works!
-</p>
+<form action="">
+  <Label for="brq">Search by barcode</Label>
+  <input name="brq" [(ngModel)]="brcode">
+  <button class="btn btn-info" (click)="keres(brcode)" >SEARCH</button>
+</form>
+
+<section>
+  <div class="card text-white bg-primary mb-3" style="max-width: 18em;">
+    <div class="card-body">
+      <img src="{{kep}}" alt="Nincs">
+     <ul>
+       <li>A termék neve: {{foody}}</li>
+       <li>Gyártó cég: {{brand}}</li>
+       <li>Származási ország: {{countr}}</li>
+        </ul>
+    </div>
+  </div>
+</section>
+<div>
+  <p>pl. 5998200460104 vagy 8710532438265</p>
+</div>

@@ -20,7 +20,7 @@ export class Soccer1Component implements OnInit {
       console.log(data);
     });
   }
-  ngOnInit() {}
+  ngOnInit() { }
 }
 
 interface serverData {
