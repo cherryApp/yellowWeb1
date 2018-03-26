@@ -1,3 +1,70 @@
-<p>
-  focikinga works!
-</p>
+<div class="jumbotron">
+  <h1 class="display-4">English Premier League</h1>
+  <p class="lead">2016/17</p>
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <table class="table table-hover">
+        <thead>
+          <tr class="myHead">
+            <th scope="col">Rounds</th>
+          </tr>
+        </thead>
+        <tbody>
+          <select class="custom-select" size="10">
+            <option value="Test" selected>Choose a Matchday!</option>
+            <option value="{{day.name}}" *ngFor="let day of rounds; index as k" (click)="showMatchday(day, k)">{{day.name}}</option>
+          </select>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-12 col-md-8">
+
+      <app-selected-match [day]="day" [k]="k"></app-selected-match>
+
+    </div>
+  </div>
+</div>
+
+
+<h1>Clubs</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>index</th>
+            <th (click)="sortTable('code')">Code</th>
+            <th (click)="sortTable('name')">Name</th>
+            <th (click)="sortTable('key')">Key</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let club of clubs2; index as i">
+            <td>{{i+1}}</td>
+            <td>
+
+              <input type="text" class="form-control" [(ngModel)]="club.code">
+            </td>
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="club.name">
+            </td>
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="club.key">
+            </td>
+            <td>
+              <div class="btn-group">
+                <button class="btn btn-primary" (click)="updateRow(i, club)">Update</button>
+                <button class="btn btn-danger" (click)="deleteRow(i)">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>
