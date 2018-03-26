@@ -2,7 +2,7 @@ table {
   background: linear-gradient(to right, green, white, red);
   color: white;
   border-radius: 20px;
-  box-shadow: 10px 10px 10px grey;
+  box-shadow: 10px 20px 20px grey;
 }
 
 th {
