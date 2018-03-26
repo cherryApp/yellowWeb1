@@ -25,6 +25,7 @@ import { Weather05Component } from './weather05/weather05.component';
 import { Weather06Component } from './weather06/weather06.component';
 import { Weather07Component } from './weather07/weather07.component';
 import { FocibalazsComponent } from './focibalazs/focibalazs.component';
+import { SearchComponent } from './weather03/search/search.component';
 
 const routes: Routes = [
   { path: '', component: Soccer1Component, pathMatch: 'full' },
@@ -68,7 +69,8 @@ const routes: Routes = [
     Weather05Component,
     Weather06Component,
     Weather07Component,
-    FocibalazsComponent
+    FocibalazsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
