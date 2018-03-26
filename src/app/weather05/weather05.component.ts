@@ -31,12 +31,6 @@ export class Weather05Component implements OnInit {
     this.jsonUrl = `http://api.openweathermap.org/data/2.5/weather?q=${this.citySearch},${this.countrySearch}&appid=7b589666541dced92f6bb1ae15152055`;
     console.log(32, this.jsonUrl);
     this.getData();
-
-
-
-
-
-
   }
 
   ngOnInit() {
@@ -49,14 +43,14 @@ export class Weather05Component implements OnInit {
       this.temp = parseFloat(this.temp.toFixed(2))
       this.pressure = data.main.pressure;
       this.humidity = data.main.humidity;
+      this.weather = [];
       this.weather.push(data.weather[0].main);
       this.weather.push(data.weather[0].description);
-
+      console.log(this.weather);
 
       this.http.get(this.iconJsonUrl).subscribe((data: iconData) => {
         this.iconArray = Object.keys(data).map(i => data[i]);
 
-        //egyszerubb lett volna csak a stringet osszehasonlitani, de igy egy weather modult importalva erikFlowers gitrol egybol jo ikont illeszt be
         switch (this.whatIcon(this.weather[1], this.iconArray)) {
           case 'storm-showers':
 
@@ -133,10 +127,15 @@ export class Weather05Component implements OnInit {
   }
 
   onSearch() {
+    this.citySearch = this.citySearch.toLowerCase();
+    this.citySearch = this.citySearch.charAt(0).toUpperCase() + this.citySearch.slice(1);
+    this.countrySearch = this.countrySearch.substring(0, 2).toLowerCase();
     this.jsonUrl = `http://api.openweathermap.org/data/2.5/weather?q=${this.citySearch},${this.countrySearch}&appid=7b589666541dced92f6bb1ae15152055`;
-    console.log(32, this.jsonUrl);
+    this.citySearch = '';
+    this.countrySearch = '';
     this.getData();
   }
+
 
   sziliClick() {
     this.sziliShow = !this.sziliShow;

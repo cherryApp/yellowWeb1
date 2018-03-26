@@ -2,15 +2,19 @@
   padding: 50px 0;
 }
 
+#sziliBtn {
+  margin: 10px;
+}
+
 #szili {
   height: 150px;
   width: auto;
-  padding: 0px;
+  margin-top: 10px;
 }
 
 #szili:hover {
   height: 150px;
   width: auto;
-  padding: 0px;
+  margin-top: 10px;
   filter: blur(2px)
 }
