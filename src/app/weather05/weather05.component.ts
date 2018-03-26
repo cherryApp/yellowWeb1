@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from "@angular/http";
 import { HttpClient } from "@angular/common/http";
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-weather05',
@@ -15,6 +16,10 @@ export class Weather05Component implements OnInit {
   humidity: Number = 0;
   icon: String = "";
   iconArray: Array<any> = [];
+  citySearch: String;
+  countrySearch: String;
+
+  console.log(citySearch);
 
   jsonUrl: string = "http://api.openweathermap.org/data/2.5/weather?q=Chicago,us&appid=7b589666541dced92f6bb1ae15152055";
   iconJsonUrl: string = "https://gist.githubusercontent.com/tbranyen/62d974681dea8ee0caa1/raw/3405bfb2a76b7cbd90fde33d8536f0cd13706955/icons.json";
@@ -89,7 +94,7 @@ export class Weather05Component implements OnInit {
           default:
             this.icon = 'assets/weatherIcons/sad.png'
         }
-
+c
 
 
 
@@ -117,6 +122,11 @@ export class Weather05Component implements OnInit {
         break;
       }
     }
+
+  }
+
+  onSearch(citySearch, countrySearch){
+    
 
   }
 
