@@ -132,8 +132,7 @@ export class Weather05Component implements OnInit {
     this.citySearch = this.citySearch.charAt(0).toUpperCase() + this.citySearch.slice(1);
     this.countrySearch = this.countrySearch.substring(0, 2).toLowerCase();
     console.log(this.citySearch, this.countrySearch);
-
-
+    console.log(`http://api.openweathermap.org/data/2.5/weather?q=${this.citySearch},${this.countrySearch}&appid=7b589666541dced92f6bb1ae15152055`);
     return `http://api.openweathermap.org/data/2.5/weather?q=${this.citySearch},${this.countrySearch}&appid=7b589666541dced92f6bb1ae15152055`;
   }
 
@@ -144,8 +143,6 @@ export class Weather05Component implements OnInit {
 
 
 }
-
-
 
 
 interface serverData {
