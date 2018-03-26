@@ -25,8 +25,6 @@ export class MatekajaComponent implements OnInit {
       this.brand = data.product.brands;
       this.countr = data.product.countries;
       console.log(this.jsonUrl);
-
-
     });
 
 
@@ -35,15 +33,13 @@ export class MatekajaComponent implements OnInit {
   keres(a) {
     this.jsonUrl = `https://world.openfoodfacts.org/api/v0/product/${a}.json`;
     this.http.get(this.jsonUrl).subscribe((data: serverData) => {
-      // this.clubs = data.clubs;
-      console.log(data);
       this.kep = data.product.image_front_small_url;
       this.foody = data.product.product_name;
       this.kat = data.product.categories;
       this.brand = data.product.brands;
       this.countr = data.product.countries;
-      console.log(this.jsonUrl);
-    }
+      
+    })
   }
 
 }
