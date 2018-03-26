@@ -1,0 +1,4 @@
+th:hover {
+  cursor: pointer;
+  text-shadow: #000;
+}

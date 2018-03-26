@@ -1,0 +1,7 @@
+body {
+  background-color: #ffffff;
+}
+
+th:hover {
+  cursor: pointer;
+}
