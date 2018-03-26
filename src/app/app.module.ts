@@ -25,22 +25,15 @@ import { Weather05Component } from './weather05/weather05.component';
 import { Weather06Component } from './weather06/weather06.component';
 import { Weather07Component } from './weather07/weather07.component';
 import { FocibalazsComponent } from './focibalazs/focibalazs.component';
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import { SearchComponent } from './weather03/search/search.component';
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
-=======
+
 import { SelectedMatchComponent } from './focikinga/selected-match/selected-match.component';
->>>>>>> 07e2bf236e232256c646f083775bda4822ddf5ac
->>>>>>> a891b0168e7709e736896e084652202733840a55
->>>>>>> d55b8c5b35324499db64f6fde78be9f917a1c474
-=======
+
 import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
->>>>>>> 8def5bd303505173b9611f2ccb519d737856ae67
+
 
 const routes: Routes = [
     { path: '', component: Soccer1Component, pathMatch: 'full' },
@@ -66,7 +59,7 @@ const routes: Routes = [
 
 
 @NgModule({
-<<<<<<< HEAD
+
     declarations: [
         AppComponent,
         NavComponent,
@@ -87,20 +80,9 @@ const routes: Routes = [
         Weather05Component,
         Weather06Component,
         Weather07Component,
-<<<<<<< HEAD
-        FocibalazsComponent
-=======
-    FocibalazsComponent,
-<<<<<<< HEAD
-    SearchComponent
-=======
-<<<<<<< HEAD
-    Weather02SearchComponent
-=======
-    SelectedMatchComponent
->>>>>>> 07e2bf236e232256c646f083775bda4822ddf5ac
->>>>>>> a891b0168e7709e736896e084652202733840a55
->>>>>>> d55b8c5b35324499db64f6fde78be9f917a1c474
+        FocibalazsComponent,
+        Weather02SearchComponent,
+        SelectedMatchComponent
     ],
     imports: [
         BrowserModule,
@@ -108,38 +90,8 @@ const routes: Routes = [
         FormsModule,
         RouterModule.forRoot(routes)
     ],
+
     providers: [
-=======
-  declarations: [
-    AppComponent,
-    NavComponent,
-    Soccer1Component,
-    Weather01Component,
-    FocikingaComponent,
-    FocirekaComponent,
-    FociandiComponent,
-    OlikajaComponent,
-    Soccer02Component,
-    Weather02Component,
-    Weather03Component,
-    LindakajaComponent,
-    Weather04Component,
-    MatekajaComponent,
-    FociricsiComponent,
-    Weather05Component,
-    Weather06Component,
-    Weather07Component,
-    FocibalazsComponent,
-    Weather02SearchComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot(routes)
-  ],
-  providers: [
->>>>>>> 8def5bd303505173b9611f2ccb519d737856ae67
 
     ],
     bootstrap: [AppComponent]

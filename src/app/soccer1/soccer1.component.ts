@@ -22,17 +22,9 @@ export class Soccer1Component implements OnInit {
     });
   }
 
-  ngOnInit() {}
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-  ngOnInit() {}
-=======
   ngOnInit() { }
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 8def5bd303505173b9611f2ccb519d737856ae67
+
+
 
   onSelect(round): void {
     this.selectedRound = round;
@@ -61,12 +53,7 @@ export class Soccer1Component implements OnInit {
       }
     });
   }
-<<<<<<< HEAD
->>>>>>> 07e2bf236e232256c646f083775bda4822ddf5ac
->>>>>>> a891b0168e7709e736896e084652202733840a55
->>>>>>> d55b8c5b35324499db64f6fde78be9f917a1c474
-=======
->>>>>>> 8def5bd303505173b9611f2ccb519d737856ae67
+
 }
 
 interface serverData {
