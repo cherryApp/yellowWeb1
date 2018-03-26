@@ -26,7 +26,17 @@ import { Weather06Component } from './weather06/weather06.component';
 import { Weather07Component } from './weather07/weather07.component';
 import { FocibalazsComponent } from './focibalazs/focibalazs.component';
 
+import { SearchComponent } from './weather03/search/search.component';
+/*
+import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
+
+import { SelectedMatchComponent } from './focikinga/selected-match/selected-match.component';
+
+import { Weather02SearchComponent } from './weather02/weather02-search/weather02-search.component';
+*/
+
 const routes: Routes = [
+<<<<<<< HEAD
   { component: Soccer1Component, path: '', pathMatch: 'full' },
   { component: Soccer1Component, path: 'soccer1' },
   { component: Weather01Component, path: 'weather01' },
@@ -45,40 +55,66 @@ const routes: Routes = [
   { component: Weather06Component, path: 'weather06' },
   { component: Weather07Component, path: 'weather07' },
   { component: FocibalazsComponent, path: 'focibalazs' }
+=======
+    { path: '', component: Soccer1Component, pathMatch: 'full' },
+    { component: Soccer1Component, path: 'soccer1' },
+    { component: Weather01Component, path: 'weather01' },
+    { component: FocikingaComponent, path: 'focikinga' },
+    { component: FocirekaComponent, path: 'focireka' },
+    { component: FociandiComponent, path: 'fociandi' },
+    { component: OlikajaComponent, path: 'olikaja' },
+    { component: Soccer02Component, path: 'soccer02' },
+    { component: Weather02Component, path: 'weather02' },
+    { component: Weather03Component, path: 'weather03' },
+    { component: LindakajaComponent, path: 'lindakaja' },
+    { component: Weather04Component, path: 'weather04' },
+    { component: MatekajaComponent, path: 'matekaja' },
+    { component: FociricsiComponent, path: 'fociricsi' },
+    { component: Weather05Component, path: 'weather05' },
+    { component: Weather06Component, path: 'weather06' },
+    { component: Weather07Component, path: 'weather07' },
+    { component: FocibalazsComponent, path: 'focibalazs' },
+    { component: SearchComponent, path: 'weather03/search' }
+>>>>>>> 6e9b847063027c921d67e160cc732956fb5829a6
 ];
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent,
-    Soccer1Component,
-    Weather01Component,
-    FocikingaComponent,
-    FocirekaComponent,
-    FociandiComponent,
-    OlikajaComponent,
-    Soccer02Component,
-    Weather02Component,
-    Weather03Component,
-    LindakajaComponent,
-    Weather04Component,
-    MatekajaComponent,
-    FociricsiComponent,
-    Weather05Component,
-    Weather06Component,
-    Weather07Component,
-    FocibalazsComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    RouterModule.forRoot(routes)
-  ],
-  providers: [
 
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavComponent,
+        Soccer1Component,
+        Weather01Component,
+        FocikingaComponent,
+        FocirekaComponent,
+        FociandiComponent,
+        OlikajaComponent,
+        Soccer02Component,
+        Weather02Component,
+        Weather03Component,
+        SearchComponent,
+        LindakajaComponent,
+        Weather04Component,
+        MatekajaComponent,
+        FociricsiComponent,
+        Weather05Component,
+        Weather06Component,
+        Weather07Component,
+        FocibalazsComponent/*,
+        Weather02SearchComponent,
+        SelectedMatchComponent*/
+    ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        RouterModule.forRoot(routes)
+    ],
+
+    providers: [
+
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

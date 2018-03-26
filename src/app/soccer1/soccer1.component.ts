@@ -13,6 +13,7 @@ export class Soccer1Component implements OnInit {
   jsonUrl: string = "https://world.openfoodfacts.org/api/v0/product/5999038508006.json";
   lastKey: string = '';
   multiplier: number = 1;
+  selectedRound: any;
 
   constructor(private http: HttpClient) {
     this.http.get(this.jsonUrl).subscribe((data: serverData) => {
@@ -20,7 +21,43 @@ export class Soccer1Component implements OnInit {
       console.log(data);
     });
   }
-  ngOnInit() {}
+<<<<<<< HEAD
+  ngOnInit() { }
+=======
+
+  ngOnInit() { }
+
+
+
+  onSelect(round): void {
+    this.selectedRound = round;
+    console.log(this.selectedRound);
+  }
+
+  deleteRow(i) {
+    if (confirm("Tényleg töröljük?")) {
+      this.selectedRound.matches.splice(i, 1)
+    }
+  }
+
+  updateScore(i) {
+    this.selectedRound.matches[i].score2 = parseInt(this.selectedRound.matches[i].score2);
+  }
+
+  //buggy
+  sortTable(key: string) {
+    let bugzy = 0;
+    this.selectedRound.matches.sort((a: string, b: string) => {
+      if (a[key] && b[key]) {
+        console.log(bugzy++);
+        return b[key].localeCompare(a[key])
+      } else {
+        return 0;
+      }
+    });
+  }
+
+>>>>>>> 1ea42ba576a8d4586b70fba21d800ef40995b6a8
 }
 
 interface serverData {
