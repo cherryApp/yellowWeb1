@@ -37,26 +37,6 @@ import { Weather02SearchComponent } from './weather02/weather02-search/weather02
 */
 
 const routes: Routes = [
-<<<<<<< HEAD
-  { component: Soccer1Component, path: '', pathMatch: 'full' },
-  { component: Soccer1Component, path: 'soccer1' },
-  { component: Weather01Component, path: 'weather01' },
-  { component: FocikingaComponent, path: 'focikinga' },
-  { component: FocirekaComponent, path: 'focireka' },
-  { component: FociandiComponent, path: 'fociandi' },
-  { component: OlikajaComponent, path: 'olikaja' },
-  { component: Soccer02Component, path: 'soccer02' },
-  { component: Weather02Component, path: 'weather02' },
-  { component: Weather03Component, path: 'weather03' },
-  { component: LindakajaComponent, path: 'lindakaja' },
-  { component: Weather04Component, path: 'weather04' },
-  { component: MatekajaComponent, path: 'matekaja' },
-  { component: FociricsiComponent, path: 'fociricsi' },
-  { component: Weather05Component, path: 'weather05' },
-  { component: Weather06Component, path: 'weather06' },
-  { component: Weather07Component, path: 'weather07' },
-  { component: FocibalazsComponent, path: 'focibalazs' }
-=======
     { path: '', component: Soccer1Component, pathMatch: 'full' },
     { component: Soccer1Component, path: 'soccer1' },
     { component: Weather01Component, path: 'weather01' },
@@ -76,7 +56,6 @@ const routes: Routes = [
     { component: Weather07Component, path: 'weather07' },
     { component: FocibalazsComponent, path: 'focibalazs' },
     { component: SearchComponent, path: 'weather03/search' }
->>>>>>> 6e9b847063027c921d67e160cc732956fb5829a6
 ];
 
 
