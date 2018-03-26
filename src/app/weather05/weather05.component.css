@@ -7,3 +7,10 @@
   width: auto;
   padding: 0px;
 }
+
+#szili:hover {
+  height: 150px;
+  width: auto;
+  padding: 0px;
+  filter: blur(2px)
+}

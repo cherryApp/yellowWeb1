@@ -3,6 +3,7 @@ import { Http } from "@angular/http";
 import { HttpClient } from "@angular/common/http";
 import { NgModel } from '@angular/forms';
 
+
 @Component({
   selector: 'app-weather05',
   templateUrl: './weather05.component.html',
