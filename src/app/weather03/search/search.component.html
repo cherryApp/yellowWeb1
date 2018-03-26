@@ -1,0 +1,22 @@
+<div class="col-12">
+  <form (submit)="citySearch()">
+    <div class="form-group">
+      <label for="searchCity">Város</label>
+      <input class="form-control" name="searchCity" type="text" [(ngModel)]="searchCity">
+    </div>
+    <div class="form-group">
+      <label for="searchChountry">Ország</label>
+      <input class="form-control" name="searchChountry" type="text" [(ngModel)]="searchCountry">
+    </div>
+    <div class="form-group">
+      <input class="form-control btn btn-primary" type="submit" value="Keresés">
+    </div>
+  </form>
+</div>
+<div class="col-12 text-center">
+  {{city.name}}
+  <br>{{city.weather[0].description}}
+  <br>{{city.main.temp}}°C
+  <hr>
+</div>
+<pre>{{city | json}}</pre>
