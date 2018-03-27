@@ -17,8 +17,8 @@
 
       <tr *ngFor="let matches of matchday.matches; index as i ">
         <td>{{ matchday.matches[i].date | date }}</td>
-        <td>{{ matchday.matches[i].team1.name }}</td>
-        <td>{{ matchday.matches[i].team2.name }}</td>
+        <td data-toggle="tooltip" data-placement="left" [title]="matchday.matches[i].team1.code">{{ matchday.matches[i].team1.name }}</td>
+        <td data-toggle="tooltip" data-placement="left" [title]="matchday.matches[i].team1.code">{{ matchday.matches[i].team2.name }}</td>
         <td>{{ matchday.matches[i].score1 }}</td>
         <td>{{ matchday.matches[i].score2 }}</td>
       </tr>
