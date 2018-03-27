@@ -25,6 +25,7 @@ import { Weather05Component } from './weather05/weather05.component';
 import { Weather06Component } from './weather06/weather06.component';
 import { Weather07Component } from './weather07/weather07.component';
 import { FocibalazsComponent } from './focibalazs/focibalazs.component';
+import { FociDaniComponent } from './foci-dani/foci-dani.component';
 
 import { SearchComponent } from './weather03/search/search.component';
 import { KelvinToCelsiusPipe } from './kelvin-to-celsius.pipe';
@@ -55,6 +56,7 @@ const routes: Routes = [
     { component: Weather06Component, path: 'weather06' },
     { component: Weather07Component, path: 'weather07' },
     { component: FocibalazsComponent, path: 'focibalazs' },
+    { component: FociDaniComponent, path: 'foci-dani' },
     { component: SearchComponent, path: 'weather03/search' }
 ];
 
@@ -83,6 +85,7 @@ const routes: Routes = [
         Weather07Component,
         KelvinToCelsiusPipe,
         FocibalazsComponent,
+        FociDaniComponent,
         Weather02SearchComponent,/*,
         SelectedMatchComponent*/
     ],
