@@ -15,6 +15,9 @@ export class Soccer1Component implements OnInit {
   nameOfTheGame: string;
   selectedRound: RoundSoccer1;
   matches: Array<any> = [];
+  lastKey: string = '';
+  multiplier: number = 1;
+
   jsonUrl: string = "https://raw.githubusercontent.com/opendatajson/football.json/master/2016-17/it.1.json";
 
   constructor(private http: HttpClient) {
@@ -41,17 +44,22 @@ export class Soccer1Component implements OnInit {
     this.selectedRound.matches[i].score2 = parseInt(this.selectedRound.matches[i].score2);
   }
 
-  //buggy
-  sortTable(key: string) {
-    let bugzy = 0;
-    this.selectedRound.matches.sort((a: string, b: string) => {
-      if (a[key] && b[key]) {
-        console.log(bugzy++);
-        return b[key].localeCompare(a[key])
-      } else {
-        return 0;
-      }
-    });
+  sortTable(key: string, deepKey: string) {
+    if (this.lastKey == key) {
+      this.multiplier *= -1;
+    }
+
+    if (deepKey) {
+      this.selectedRound.matches.sort((a, b) => {
+        return a[key][deepKey].localeCompare(b[key][deepKey]) * this.multiplier;
+      });
+    } else {
+      this.selectedRound.matches.sort((a, b) => {
+        return a[key].localeCompare(b[key]) * this.multiplier;
+      });
+    }
+
+    this.lastKey = key;
   }
 }
 
