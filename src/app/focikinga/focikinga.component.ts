@@ -12,7 +12,7 @@ import { isNullOrUndefined } from 'util';
 })
 export class FocikingaComponent implements OnInit {
   rounds: Array<Matchday>;
-  selectedMatchday: Matchday;
+  selectedMatchday: Matchday = new Matchday();
   jsonUrl: string = "https://raw.githubusercontent.com/opendatajson/football.json/master/2016-17/en.1.json";
   lastKey: string = '';
   multiplier: number = 1;
@@ -25,6 +25,7 @@ export class FocikingaComponent implements OnInit {
     this.http.get(this.jsonUrl).subscribe((data: JsonData) => {
       console.log(data);
       this.rounds = data.rounds;
+      this.selectedMatchday = this.rounds[0];
     });
 
     this.http2.get(this.jsonUrl2).subscribe((data2: serverData) => {

@@ -11,20 +11,21 @@
         </thead>
         <tbody>
           <select class="custom-select" size="21">
-            <option value="Test" selected>Choose a Matchday!</option>
-            <option value="{{matchday.name}}" *ngFor="let matchday of rounds; index as k" [class.selected]="matchday === selectedMatchday"
-              (click)="showMatchday(matchday, k)">{{matchday.name}}</option>
+            <option [value]="matchday" *ngFor="let matchday of rounds; index as k" [class.selected]="matchday === selectedMatchday"
+              (click)="showMatchday(matchday, k)">{{matchday.name}}</option> 
           </select>
         </tbody>
       </table>
     </div>
     <div class="col-12 col-md-8">
-      <p>Trying child component:</p>
+      <h5>Using child component:</h5>
       <app-selected-match></app-selected-match>
 
-      <!--<app-selected-match [matchday]="selectedMatchday"> </app-selected-match>-->
+      <app-selected-match [matchday]="selectedMatchday"> </app-selected-match>
+
       <div *ngIf="selectedMatchday">
-        <p>within focikinga component:</p>
+          <h5>Using only main component:</h5>
+        <h3>{{selectedMatchday.name}}</h3>
         <table class="table table-sm table-hover">
           <thead>
             <tr>
@@ -38,8 +39,8 @@
           <tbody>
 
             <tr *ngFor="let matches of selectedMatchday.matches; index as i ">
-              <td>{{selectedMatchday.matches[i].date}}</td>
-              <td>{{selectedMatchday.matches[i].team1.name}}</td>
+              <td>{{selectedMatchday.matches[i].date | date}}</td>
+              <td data-toggle="tooltip" data-placement="left" [title]="selectedMatchday.matches[i].team1.code">{{selectedMatchday.matches[i].team1.name}}</td>
               <td>{{selectedMatchday.matches[i].team2.name}}</td>
               <td>{{selectedMatchday.matches[i].score1}}</td>
               <td>{{selectedMatchday.matches[i].score2}}</td>

@@ -1,29 +1,29 @@
-<!--<div *ngIf="matchday">-->
+<div *ngIf="matchday">
 
 
-<!--<p>{{matchday.name}} - {{k}}
-  </p>-->
-<table class="table table-sm table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Team 1.</th>
-      <th scope="col">Team 2.</th>
-      <th scope="col">Score 1.</th>
-      <th scope="col">Score 2.</th>
-    </tr>
-  </thead>
-  <tbody>
+<h3>{{matchday.name}} </h3>
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th (click)="sortTable3('date')">Date</th>
+        <th (click)="sortTable3('team1')">Team 1.</th>
+        <th (click)="sortTable3('team2')">Team 2.</th>
+        <th>Score 1.</th>
+        <th>Score 2.</th>
+      </tr>
+    </thead>
+    <tbody>
 
 
-    <tr>
-      <td></td>
-      <td>...</td>
-      <td>...</td>
-      <td>..</td>
-    </tr>
+      <tr *ngFor="let matches of matchday.matches; index as i ">
+        <td>{{ matchday.matches[i].date | date }}</td>
+        <td>{{ matchday.matches[i].team1.name }}</td>
+        <td>{{ matchday.matches[i].team2.name }}</td>
+        <td>{{ matchday.matches[i].score1 }}</td>
+        <td>{{ matchday.matches[i].score2 }}</td>
+      </tr>
 
 
-  </tbody>
-</table>
-<!--</div>-->
+    </tbody>
+  </table>
+</div>
