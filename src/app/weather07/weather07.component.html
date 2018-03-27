@@ -58,8 +58,38 @@
 
         </tbody>
       </table>
-
+      <form>
+        <div class="form-group">
+          <label>Keresés város szerint</label>
+          <input class="form-control" value="Budapest" type="text" [(ngModel)]="city" name="cityQuery">
+        </div>
+        <br>
+        <button class="btn btn-primary btn-block" (click)="writeWheatherData()">Keres</button>
+      </form>
     </div>
+    <table class="table" *ngIf="(weatherData)">
+      <!--csak akkor jelenik meg ha a beírt paraméter egyezik a lekért várossal-->
+      <thead>
+        <tr>
+          <th colspan="2">{{weatherData.name}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Páratartalom</td>
+          <td>{{weatherData.main.humidity}} rel.%</td>
+        </tr>
+        <tr>
+          <td>Légnyomás </td>
+          <td>{{roundFun(weatherData.main.pressure)}} mBar</td>
+        </tr>
+        <tr>
+          <td>Hőmérséklet</td>
+          <td> {{roundFun(weatherData.main.temp-273.15)}} °C</td>
+        </tr>
+
+      </tbody>
+    </table>
 
   </div>
 </div>
