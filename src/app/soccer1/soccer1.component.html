@@ -7,7 +7,6 @@
   <div class="row">
     <div class="col-md-4">
       <br>
-
       <button type="button" class="btn btn-sm btn-outline-success btn-for-rounds" *ngFor="let round of rounds; index as i" (click)="onSelect(round)">
         Round {{i+1}}
       </button>
@@ -17,9 +16,10 @@
       <div *ngIf="selectedRound">
         <table class="table table-sm">
           <thead>
-            <th (click)="sortTable('date')">Date</th>
-            <th (click)="sortTable('team1')">Team1</th>
-            <th (click)="sortTable('team2')">Team2</th>
+            <th (click)="sortTable('date')">Date*
+            </th>
+            <th (click)="sortTable('team1', 'name')">Team1*</th>
+            <th (click)="sortTable('team2', 'name')">Team2*</th>
             <th>Score1</th>
             <th></th>
             <th>Score2</th>
