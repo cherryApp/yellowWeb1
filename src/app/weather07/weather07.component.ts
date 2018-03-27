@@ -9,6 +9,8 @@ import { ClassGetter } from "@angular/compiler/src/output/output_ast";
   styleUrls: ["./weather07.component.css"]
 })
 export class Weather07Component implements OnInit {
+  weatherData: object;
+  city: string;
   mainBudapest: Array<any> = [];
   jsonUrlBudapest: string = "http://api.openweathermap.org/data/2.5/weather?q=Budapest,hu&appid=243669b24ee92ac1351b22b1e42556bd";
   mainMadrid: Array<any> = [];
@@ -53,6 +55,20 @@ export class Weather07Component implements OnInit {
       this.mainBerlin = data.main;
       console.log(this.mainBerlin);
     });
+  }
+  writeWheatherData() {
+    this.http.get(this.dataUrl()).subscribe((data: object) => {
+      this.weatherData = data;
+    });
+  }
+  dataUrl() {
+    return `http://api.openweathermap.org/data/2.5/weather?q=${
+      this.city
+    }&appid=243669b24ee92ac1351b22b1e42556bd`;
+  }
+
+  roundFun(unroundedNum: string) {
+    return parseInt(unroundedNum);
   }
   ngOnInit() {}
 }
