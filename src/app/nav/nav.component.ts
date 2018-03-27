@@ -26,7 +26,8 @@ export class NavComponent implements OnInit {
     { label: 'Péter', url: '/weather06' },
     { label: 'Zsombor', url: '/weather07' },
     { label: 'Balázs', url: '/focibalazs' },
-    { label: 'Dani', url: '/foci-dani' }
+    { label: 'Dani', url: '/foci-dani' },
+    { label: 'Zsiga', url: '/focizsiga' }
   ];
   constructor() { }
 
