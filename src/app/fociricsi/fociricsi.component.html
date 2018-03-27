@@ -1,3 +1,47 @@
-<p>
-  fociricsi works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <h1 class="col-8 text-center">Deutsche Bundesliga 2016/17</h1>
+    <div class="col-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-dark table-striped table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th (click)="sortingThis('code')">Code</th>
+            <th (click)="sortingThis('name')">Name</th>
+            <th (click)="sortingThis('key')">Key</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let club of clubs; index as i">
+            <td>{{ i+1 }}</td>
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="club.code">
+            </td>
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="club.name">
+            </td>
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="club.key">
+            </td>
+            <td>
+              <div class="btn-group btn-group-toggle">
+                <button type="button" class="btn btn-outline-light" (click)="updateRow(club)">Update</button>
+                <button type="button" class="btn btn-outline-danger" (click)="deleteRow(i)">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <pre>
+      {{ clubs | json}}
+    </pre>
+  </div>
+</div>

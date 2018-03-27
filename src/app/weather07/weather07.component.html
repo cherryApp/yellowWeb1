@@ -1,3 +1,95 @@
-<p>
-  weather07 works!
-</p>
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-md-offset-1">
+
+      <table class="table table-striped table-hover text-center">
+        <thead>
+          <tr>
+            <th>Város</th>
+            <th>Hőmérséklet(C°)</th>
+            <th>Légnyomás(hPa)</th>
+            <th>Páratartalom(%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Budapest</td>
+            <td>{{roundFun(mainBudapest.temp-273)}}</td>
+            <td>{{mainBudapest.pressure}} </td>
+            <td>{{mainBudapest.humidity}}</td>
+          </tr>
+          <tr>
+            <td>Madrid</td>
+            <td>{{roundFun(mainMadrid.temp-273)}}</td>
+            <td>{{mainMadrid.pressure}} </td>
+            <td>{{mainMadrid.humidity}}</td>
+          </tr>
+          <tr>
+            <td>Washington</td>
+            <td>{{roundFun(mainWashington.temp-273)}}</td>
+            <td>{{mainWashington.pressure}} </td>
+            <td>{{mainWashington.humidity}}</td>
+          </tr>
+          <tr>
+            <td>Peking</td>
+            <td>{{roundFun(mainPeking.temp-273)}}</td>
+            <td>{{mainPeking.pressure}} </td>
+            <td>{{mainPeking.humidity}}</td>
+          </tr>
+          <tr>
+            <td>London</td>
+            <td>{{roundFun(mainLondon.temp-273)}}</td>
+            <td>{{mainLondon.pressure}} </td>
+            <td>{{mainLondon.humidity}}</td>
+          </tr>
+          <tr>
+            <td>Paris</td>
+            <td>{{roundFun(mainParis.temp-273)}}</td>
+            <td>{{mainParis.pressure}} </td>
+            <td>{{mainParis.humidity}}</td>
+          </tr>
+          <tr>
+            <td>Berlin</td>
+            <td>{{roundFun(mainBerlin.temp-273)}}</td>
+            <td>{{mainBerlin.pressure}} </td>
+            <td>{{mainBerlin.humidity}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <form>
+        <div class="form-group">
+          <label>Keresés város szerint</label>
+          <input class="form-control" value="Budapest" type="text" [(ngModel)]="city" name="cityQuery">
+        </div>
+        <br>
+        <button class="btn btn-primary btn-block" (click)="writeWheatherData()">Keres</button>
+      </form>
+    </div>
+    <table class="table" *ngIf="(weatherData)">
+      <!--csak akkor jelenik meg ha a beírt paraméter egyezik a lekért várossal-->
+      <thead>
+        <tr>
+          <th colspan="2">{{weatherData.name}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Páratartalom</td>
+          <td>{{weatherData.main.humidity}} rel.%</td>
+        </tr>
+        <tr>
+          <td>Légnyomás </td>
+          <td>{{roundFun(weatherData.main.pressure)}} hPa</td>
+        </tr>
+        <tr>
+          <td>Hőmérséklet</td>
+          <td> {{roundFun(weatherData.main.temp-273.15)}} °C</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>

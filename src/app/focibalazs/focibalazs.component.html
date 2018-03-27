@@ -1,3 +1,36 @@
-<p>
-  focibalazs works!
-</p>
+<div>&nbsp;</div>
+<button class="btn btn-primary" (click)="toggleTable()">{{showTable ? "Hide Table" : "Show Table"}}</button>
+<div *ngIf="showTable">
+  <h3 class="text-center">Serie A 2016/17</h3>
+  <table class="table table-bordered text-center">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th (click)="sortingTable('code')">Code</th>
+        <th (click)="sortingTable('key')">Key</th>
+        <th (click)="sortingTable('name')">Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let club of clubs; index as i">
+        <td>{{i+1}}</td>
+        <td>
+          <input type="text" class="form-control" [(ngModel)]="club.code">
+        </td>
+        <td>
+          <input type="text" class="form-control" [(ngModel)]="club.key">
+        </td>
+        <td>
+          <input type="text" class="form-control" [(ngModel)]="club.name">
+        </td>
+        <td>
+          <div class="btn-group">
+            <button class="btn btn-success" (click)="updateRow(club)">Update</button>
+            <button class="btn btn-warning" (click)="deleteRow(i)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

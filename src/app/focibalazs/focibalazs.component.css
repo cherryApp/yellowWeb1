@@ -1,0 +1,31 @@
+table {
+  background: linear-gradient(to right, green, white, red);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 10px 20px 20px grey;
+}
+
+th {
+  cursor: pointer;
+}
+
+th:hover {
+  color: black;
+}
+
+.form-control {
+  background: grey;
+  font-weight: bold;
+  color: white;
+  border: none;
+}
+
+table input:hover {
+  cursor: pointer;
+}
+
+table input:focus {
+  cursor: pointer;
+  background: yellow;
+  color: black;
+}

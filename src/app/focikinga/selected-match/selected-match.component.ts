@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FocikingaComponent } from '../focikinga.component';
-import { Matchday, JsonData } from '../data';
+import { Matchday, JsonData, Match } from '../data';
 
 @Component({
   selector: 'app-selected-match',

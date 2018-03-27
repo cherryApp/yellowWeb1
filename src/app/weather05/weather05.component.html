@@ -1,3 +1,70 @@
-<p>
-  weather05 works!
-</p>
+<div id="mainContainer" class="container bg-primary">
+
+  <div class="row">
+    <div class="col-xs-12 col-md-12 text-center">
+      <h1>Weather</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-12 text-center">
+      <form>
+        <div class="form-row">
+          <div class="col">
+            <input name="citySearch" placeholder="city" class="form-control" type="text" [(ngModel)]="citySearch">
+          </div>
+          <div class="col">
+            <input name="countrySearch" placeholder="country" class="form-control" type="text" [(ngModel)]="countrySearch">
+          </div>
+          <button class="btn" (click)="onSearch()">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row bg-success">
+    <div class="col-xs-4 col-md-3 text-center">
+      <h1>{{city}}</h1>
+    </div>
+
+    <div class="col-xs-4 col-md-2 text-center">
+      <img class="img-responsive" [src]="icon">
+    </div>
+
+    <div class="col-xs-12 col-md-6 text-center">
+      <table class="table table-sm table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th>Temperature</th>
+            <th>Pressure</th>
+            <th>Humidity</th>
+            <th>Weather</th>
+            <th>Description</th>
+            <th>Tool</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{temp}} &#8451;</td>
+            <td>{{pressure}} hpa</td>
+            <td>{{humidity}} %</td>
+            <td>{{weather[0]}}</td>
+            <td>{{weather[1]}}</td>
+            <td>
+
+              <button class="btn" (click)="onSearch()">Add</button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div>
+
+    <img [style.visibility]="sziliShow ? 'visible' : 'hidden' " id="szili" src="assets/weatherIcons/nemeth-szilard.png" alt="">
+    <button id="sziliBtn" class="btn float-right" (click)="sziliClick()">Professional Help</button>
+  </div>
+</div>
