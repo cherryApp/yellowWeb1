@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-4">
+      <h1>English Premier League 2016/17</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <tr class="text-center">
+            <th>Index</th>
+            <th (click)="sortTable('code')">Code</th>
+            <th (click)="sortTable('name')">Club Name</th>
+            <th (click)="sortTable('key')">Key</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let club of clubs; index as i">
+            <td> {{i+1}} </td>
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="club.code">
+            </td>
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="club.name">
+            </td>
+            <td>
+              <input type="text" class="form-control" [(ngModel)]="club.key">
+            </td>
+            <td>
+              <button class="btn btn-success" (click)="updateRow(club)">Update</button>
+              <button class="btn btn-danger" (click)="deleteRow(club[i])">Delete</button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

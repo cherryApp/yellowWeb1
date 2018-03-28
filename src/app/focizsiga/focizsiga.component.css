@@ -1,0 +1,29 @@
+table {
+    background: linear-gradient(to right, red, yellow, red);
+    color: grey;
+  }
+  
+  th {
+    cursor: pointer;
+  }
+  
+  th:hover {
+    color: black;
+  }
+  
+  .form-control {
+    background: grey;
+    font-weight: bold;
+    color: white;
+    border: none;
+  }
+  
+  table input:hover {
+    cursor: pointer;
+  }
+  
+  table input:focus {
+    cursor: pointer;
+    background: greenyellow;
+    color: black;
+  }
