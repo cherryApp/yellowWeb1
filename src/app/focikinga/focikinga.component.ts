@@ -72,6 +72,7 @@ export class FocikingaComponent implements OnInit {
     this.lastKey = key;
   }
 
+ 
   sortTable(key: string) {
 
     if (this.lastKey == key) {

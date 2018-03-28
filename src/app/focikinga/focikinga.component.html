@@ -41,7 +41,7 @@
             <tr *ngFor="let matches of selectedMatchday.matches; index as i ">
               <td>{{selectedMatchday.matches[i].date | date}}</td>
               <td data-toggle="tooltip" data-placement="left" [title]="selectedMatchday.matches[i].team1.code">{{selectedMatchday.matches[i].team1.name}}</td>
-              <td data-toggle="tooltip" data-placement="left" [title]="selectedMatchday.matches[i].team1.code">{{selectedMatchday.matches[i].team2.name}}</td>
+              <td data-toggle="tooltip" data-placement="left"  [title] ="selectedMatchday.matches[i].team2.code">{{selectedMatchday.matches[i].team2.name}}</td>
               <td>{{selectedMatchday.matches[i].score1}}</td>
               <td>{{selectedMatchday.matches[i].score2}}</td>
             </tr>
