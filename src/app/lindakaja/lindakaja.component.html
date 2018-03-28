@@ -13,9 +13,9 @@
           <li class="list-group-item">Id: {{ csoki.product.id }}</li>
           <li class="list-group-item">Márka: {{ csoki.product.brands }}</li>
         </ul>
-        <div class="col-12">
-          <a [href]="csoki.product.link" class="btn btn-primary">Link</a>
-          <button class="btn btn-danger" (click)="deleteCard(i, csoki)">Delete</button>
+        <div class="col-12 text-center">
+          <a [href]="csoki.product.link" class="btn btn-primary col-7">Link</a>
+          <button class="btn btn-danger col-4" (click)="deleteCard(i, csoki)">Delete</button>
         </div>
       </div>
     </div>
