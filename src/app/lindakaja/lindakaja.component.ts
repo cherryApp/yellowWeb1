@@ -39,7 +39,7 @@ export class LindakajaComponent implements OnInit {
   }
  
   deleteCard(i) {
-    if (confirm('Are you sure?')){
+    if (confirm('Are you really a chocolate fan???')){
       this.csokik.splice(i, 1);
     }
   }

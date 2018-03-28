@@ -2,7 +2,7 @@
 <h1 class="text-center">Chocolate selection</h1>
 <div class="container">
   <div class="row">
-    <div class="col-md-4 basic-card" *ngFor="let csoki of csokik">
+    <div class="col-md-4 basic-card" *ngFor="let csoki of csokik; let i = index">
       <div class="card bg-light mb-3" style="width: 18rem;">
         <img class="card-img-top" [src]="csoki.product.image_front_small_url" alt="Termék kép">
         <div class="card-body">
@@ -15,7 +15,7 @@
         </ul>
         <div class="col-12">
           <a [href]="csoki.product.link" class="btn btn-primary">Link</a>
-          <button class="btn btn-danger" (click)="deleteCard(product)">Delete</button>
+          <button class="btn btn-danger" (click)="deleteCard(i, csoki)">Delete</button>
         </div>
       </div>
     </div>
