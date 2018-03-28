@@ -37,18 +37,16 @@ export class LindakajaComponent implements OnInit {
   }
   ngOnInit() {
   }
-  updateCard(data) {
-    return this.csokik;
-  }
-  deleteCard(data, i) {
-    if (confirm('Are you sure?')){
+ 
+  deleteCard(i) {
+    if (confirm('Are you really a chocolate fan???')){
       this.csokik.splice(i, 1);
     }
   }
 }
 interface serviceData {
   code: number;
-  product: {brands: string, categories: string, id: number, image: string, product_name: string, link: string};
+  product: {brands: string, categories: string, id: number, image: string, product_name: string, link: string, quantity: string};
 }
 
 

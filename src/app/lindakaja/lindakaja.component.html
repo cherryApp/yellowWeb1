@@ -1,22 +1,24 @@
-<h1>Chocolate selection</h1>
+<body>
+<h1 class="text-center">Chocolate selection</h1>
 <div class="container">
   <div class="row">
-    <div class="col-md-4 basic-card" *ngFor="let csoki of csokik">
+    <div class="col-md-4 basic-card" *ngFor="let csoki of csokik; let i = index">
       <div class="card bg-light mb-3" style="width: 18rem;">
         <img class="card-img-top" [src]="csoki.product.image_front_small_url" alt="Termék kép">
         <div class="card-body">
-          <h5 class="card-title">Termék neve</h5>
-          <p class="card-text">Termékismertető.</p>
+          <h5 class="card-title">{{ csoki.product.product_name }}</h5>
+          <p class="card-text">Termékismertető: {{ csoki.product.quantity }}</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Név: {{ csoki.product.product_name }}</li>
-          <li class="list-group-item">Termék kategória</li>
+          <li class="list-group-item">Id: {{ csoki.product.id }}</li>
+          <li class="list-group-item">Márka: {{ csoki.product.brands }}</li>
         </ul>
-        <div class="card-body btn-group">
-          <button class="btn btn-success" (click)="updateCard(product)">Update</button>
-          <button class="btn btn-danger" (click)="deleteCard(product)">Delete</button>
+        <div class="col-12 text-center">
+          <a [href]="csoki.product.link" class="btn btn-primary col-7">Link</a>
+          <button class="btn btn-danger col-4" (click)="deleteCard(i, csoki)">Delete</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+</body>

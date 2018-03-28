@@ -5,3 +5,25 @@
 .btn:hover{
     cursor: pointer;
   }
+
+img {
+    height: 50vh;
+   
+}
+
+body {
+    background: burlywood;
+}
+
+h1 {
+    padding-top: 20px;
+    color: #8C2C08;
+}
+
+.card-body {
+    height: 124px;
+}
+
+.list-group {
+    height: 123px;
+}

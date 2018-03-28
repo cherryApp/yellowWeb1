@@ -5,15 +5,15 @@
                 <span class="input-group-text" id="inputPrepend">Add new city:</span>
             </div>
             <input type="text" class="form-control" id="input" placeholder="city,countrycode" aria-describedby="inputGroupPrepend">
-            <button class="btn btn-info col-2" type="submit">Add</button>
+            <button class="btn btn-info col-2" type="submit" (click)="addCity()">Add city</button>
         </div>
     </form>
 </div>
 <div class="container">
-    <table class="table table-striped table-bordered table-hover text-center ">
+    <table class="table table-striped table-bordered text-center ">
         <thead class="thead-light">
             <tr>
-                <th scope="col" (click)="sortingReverse('city')">City</th>
+                <th scope="col" (click)="sortingReverse()">City</th>
                 <th scope="col">Weather</th>
                 <th scope="col">Current weather</th>
                 <th scope="col">Wind speed</th>
@@ -22,12 +22,13 @@
                 <th scope="col">Max temp</th>
                 <th scope="col">Humidity</th>
                 <th scope="col">Pressure</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody id="tBody">
-            <tr *ngFor="let data of dataDisplay">
-                <td>
-                    {{data.name}}
+            <tr *ngFor="let data of dataDisplay, let i = index">
+                <td (click)="openCity(data.id)">
+                    {{data.name}}<span class="noBold">{{" ("+ data.sys.country + ")"}}</span>
                 </td>
                 <td>
                     <img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png" alt="weather icon">
@@ -36,16 +37,16 @@
                     {{data.weather[0].main}}
                 </td>
                 <td>
-                    {{data.wind.speed + " km/h"}}
+                    {{data.wind.speed + " m/s"}}
                 </td>
                 <td>
                     {{(data.main.temp - 273.15).toFixed(1) + " °C"}}
                 </td>
                 <td>
-                    {{data.main.temp_min - 273.15 + " °C"}}
+                    {{(data.main.temp_min - 273.15).toFixed(0) + " °C"}}
                 </td>
                 <td>
-                    {{data.main.temp_max - 273.15 + " °C"}}
+                    {{(data.main.temp_max - 273.15).toFixed(0) + " °C"}}
                 </td>
                 <td>
                     {{data.main.humidity + "%"}}
@@ -53,8 +54,13 @@
                 <td>
                     {{data.main.pressure + " hPa"}}
                 </td>
+                <td>
+                    <button class="btn btn-sm btn-danger" (click)="deleteRow(i,data.name)">X</button>
+                </td>
             </tr>
-
+            <tr>
+                <td colspan="10" class="noBold noHover">Powered by <a href="http://openweathermap.org/">OpenWeatherMap</a></td>
+            </tr>
         </tbody>
     </table>
 </div>

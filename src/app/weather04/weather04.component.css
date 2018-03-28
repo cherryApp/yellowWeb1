@@ -1,9 +1,13 @@
 div.input-group {
-    margin-bottom: 15px;
+    margin: 25px 0;
 }
 
 span {
     font-weight: bold;
+}
+.noBold {
+    font-weight: 400;
+    font-size: 80%
 }
 table {
     box-shadow: 0 5px 20px grey;
@@ -12,8 +16,26 @@ th[scope], #tBody td {
     vertical-align: middle
 }
 td:first-child{
-    font-weight: bold
+    cursor: pointer;
+    font-weight: bold;
+    transition: .5s;
 }
+td:first-child:hover{
+    box-shadow: inset 0 0 15px slategrey;
+}
+
 th[scope] {
     cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: orangered;
+    transition: .3s
+}
+a:hover {
+    color: darkred;
+}
+
+td.noBold:hover{
+    box-shadow: none;
 }
